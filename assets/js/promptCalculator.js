@@ -61,25 +61,31 @@ iife = (function(){
     // divide();
     
     while(true){
-        p = prompt("what do u want to do\n 1. add\n 2. substract\n 3.multiply \n 4. divide")
-        if(p=="1"){
-            add();
-        }
-        else{
-            if(p=="2"){
-                substract();
+        p = prompt("what do u want to do\n 1. add\n 2. substract\n 3.multiply \n 4. divide \n Q/q. to exit")
+
+        if(p=="q"||p=="Q"){
+            break;
+        }else{
+            if(p=="1"){
+                add();
             }
             else{
-                if(p=="3"){
-                    multiply();
+                if(p=="2"){
+                    substract();
                 }
                 else{
-                    if(p=="4"){
-                        divide();
+                    if(p=="3"){
+                        multiply();
+                    }
+                    else{
+                        if(p=="4"){
+                            divide();
+                        }
                     }
                 }
             }
         }
+        
 
     }
 })()
