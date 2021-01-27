@@ -8,9 +8,9 @@ function User(name, balance) {
         this.getbalance()
     }
     this.withdraw = function () {
-        amount = prompt("amount to withdraw\n max->4000 min->100 ");
+        amount = prompt("amount to withdraw\n max->4000 min->50 ");
         if (parseInt(this.balance) >= 0) {
-            if (parseInt(amount) <= 4000 && parseInt(amount) >= 100) {
+            if (parseInt(amount) <= 4000 && parseInt(amount) >= 50) {
                 this.balance -= parseInt(amount);
                 this.getbalance()
             } else {
@@ -34,10 +34,15 @@ function User(name, balance) {
     this.transfer = function () {
         amount = prompt("amount to transfer ");
         accountNumber = prompt("account Number to transfer to ");
-        this.balance -= parseInt(amount);
+        if(parseInt(amount)<(this.balance-25)){
+            this.balance -= parseInt(amount);
 
         bank.userMap[parseInt(accountNumber)].balance += parseInt(amount);
         alert("your balance is " + this.balance);
+        }
+        else{
+            alert("you broke")
+        }
     }
 
 
